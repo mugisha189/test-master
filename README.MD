@@ -30,18 +30,40 @@ Ensure you have the following installed on your local machine:
     cd test
     ```
 
-### Server
+### Server Setup
 
-1. Navigate to the `server` directory:
-    ```
+Follow these steps to set up the server:
+
+1. **Navigate to the `server` directory:**
+    ```bash
     cd server
     ```
-2. Install Django and other dependencies:
-    ```
+
+2. **Create a SQLite database file:**
+    - In the `server` directory, create a new file named `.dbsqlite3`. You can use the following command:
+      ```bash
+      touch db.sqlite3
+      ```
+
+3. **Create a `.env` file:**
+    - In the same directory, create a new file named `.env`:
+      ```bash
+      touch .env
+      ```
+
+4. **Add the `INFURA_PROJECT_ID` to the `.env` file:**
+    - Open the `.env` file in a text editor and add the following line, replacing `your_infura_project_id` with your actual Infura Project ID:
+      ```env
+      INFURA_PROJECT_ID=your_infura_project_id
+      ```
+
+5. **Install Django and other dependencies:**
+    ```bash
     pip install -r requirements.txt
     ```
-3. Run the server:
-    ```
+
+6. **Run the server:**
+    ```bash
     python manage.py runserver
     ```
 
@@ -67,8 +89,4 @@ Note:
 - The application uses the email field instead of the username field for user identification.
 
 
-## Task
-1. Add an input field for the user's Ethereum wallet address to the registration page. When a user registers an account, this wallet address must be saved to the database.
-2. After login, the homepage must show the balance of the user's Ethereum wallet address.
 
-Commit your code to your personal git and share the link.
